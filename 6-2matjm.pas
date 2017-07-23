@@ -1,0 +1,80 @@
+program penjumlahan_pengurangan_matrix;
+uses crt;
+type
+    larik=array[1..25,1..25] of real;
+var
+   i,j,k:integer; bar,col:integer; a,b,c,d,e:larik;
+begin
+   write('Baris matrik ?  ');readln(bar);
+   write('Kolom matrik ? ');readln(col);
+   writeln;
+   {menginput nilai matrik pertama}
+   writeln ('Matrik pertama');
+   for i:=1 to bar do
+    begin
+     for j:=1 to col do
+      begin
+      write ('nilai[',i,',',j,'] = ');
+      readln(a[i,j]);
+      end;
+     writeln;
+    end;
+     writeln;
+     {menginput nilai matrik kedua}
+     writeln ('Matrik kedua');
+     writeln;   
+     for i:=1 to bar do
+     begin
+       for j:=1 to col do
+        begin
+         write ('nilai[',i,',',j,'] = ');
+         readln(b[i,j]);
+        end;
+        writeln;
+     end;
+      writeln;
+    {menjumlahkan matrik}
+     writeln;
+     for i:=1 to bar do
+     begin
+       for j:=1 to col do d[i,j]:=a[i,j]+b[i,j];
+     end;
+     {mengurangkan matrik}
+     writeln;
+     for i:=1 to bar do
+     begin
+       for j:=1 to col do e[i,j]:=a[i,j]-b[i,j]
+     end;
+clrscr;
+{menampilkan matrik pertama}
+writeln ('Matrik pertama:');
+for i:=1 to bar do
+ begin
+  for j:=1 to col do write (a[i,j]:0:0,' ');
+   writeln;
+ end;
+{menampilkan matrik kedua}
+writeln ('Matrik kedua:');
+for i:=1 to bar do
+ begin
+  for j:=1 to col do write (b[i,j]:0:0,' ');
+  writeln;
+ end;
+{menampilkan hasil penjumlahan}
+writeln ('Hasil penjumlahan matrik: ');
+writeln;
+for i:=1 to bar do
+ begin
+ for j:=1 to col do write(d[i,j]:9:2);
+  writeln;
+ end;
+{menampilkan hasil pengurangan}
+writeln ('Hasil pengurangan matrik: ');
+writeln;
+for i:=1 to bar do
+ begin
+  for j:=1 to col do write(e[i,j]:9:2);
+  writeln;
+ end;
+readln;
+end.

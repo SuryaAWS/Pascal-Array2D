@@ -1,0 +1,36 @@
+program invers_determinan;
+uses crt;
+var a,b,c,d,i,invers,p,q,r,s:real;
+jawab:char;
+pass:string[8];
+begin
+clrscr;
+gotoxy(20,1);
+writeln('Mencari Invers Matriks Ordo 2x2 ');
+gotoxy(10,5);write('a=');read(a);
+gotoxy(18,5);write('b=');read(b);
+gotoxy(10,7);write('c=');read(c);
+gotoxy(18,7);write('d=');read(d);
+i:=(a*d)-(b*c);
+gotoxy(24,8);write('determinan= ',i:4:2);
+readln;
+writeln;
+if not(i=0) then
+ begin
+  invers:=1/((a*d)-(b*c));
+  p:=d*invers;
+  q:=-b*invers;
+  r:=-c*invers;
+  s:=a*invers;
+  gotoxy(25,10);writeln('Invers matriks A =');
+  gotoxy(10,13);write(p:0:3);
+  gotoxy(18,13);write(q:0:3);
+  gotoxy(10,16);write(r:0:3);
+  gotoxy(18,16);write(s:0:3);
+end else
+begin
+gotoxy(25,15);
+writeln('Tidak ada invers matriks');
+end;
+readln;
+end.
